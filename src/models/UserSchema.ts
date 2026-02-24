@@ -37,7 +37,7 @@ const userSchema = new mongoose.Schema({
         type: String,
     },
     profilePic:{
-        type: Image,
+        type: String,
     },
     bio:{
         type:String,
@@ -86,6 +86,12 @@ const userSchema = new mongoose.Schema({
         enum: ["active","suspended","deleted"],
         required: true,
         default: "active"
+    },
+    refreshToken:{
+        type: String
+    },
+    refreshTokenExpiresAt:{
+        type: Date
     }
 },{
     timestamps: true
